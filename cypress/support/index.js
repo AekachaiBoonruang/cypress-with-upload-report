@@ -15,6 +15,15 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import addContext from 'mochawesome/addContext';
 
+Cypress.on('test:after:run', (test) => {
+  addContext(
+    {
+      test,
+    },
+    `../assets/videos/${Cypress.spec.name}.mp4`,
+  );
+});
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
