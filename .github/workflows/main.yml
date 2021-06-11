@@ -4,20 +4,40 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    # let's make sure our tests pass on Chrome browser
     name: E2E on Chrome
     steps:
       - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v2
+      - name: Use Node.js
+        uses: actions/setup-node@master
         with:
-          browser: chrome
-      - uses: actions/upload-artifact@v1
-        if: always()
+          node-version: 16.x
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+      - uses: actions/cache@v2
+        id: npm-cache
         with:
-          name: cypress-videos
-          path: cypress/videos
-      - uses: actions/upload-artifact@v1
-        if: always()
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install
+        run: npm install
+      - name: Run test
+        run: npm run test
+      - name: Merge test report
+        run: npm run test:merge-report
+      - name: Genereate report as Html
+        run: npm run test:genereate-report
+      - name: Copy test to public dir
+        run: |
+          mkdir public
+          cp -r cypress/results/report/* public
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "tester-report"
+          heroku_email: "aekachai.b@20scoops.net"
+        env:
+          CI: true

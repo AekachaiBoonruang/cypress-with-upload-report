@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "rm -rf cypres/results/* && cypress run",
+    "test": "cypress run  --browser chrome --headless",
     "test:merge-report": "npx mochawesome-merge ./cypress/results/report/*.json > ./cypress/results/report/index.json",
     "test:genereate-report": "npx marge ./cypress/results/report/index.json --reportDir ./cypress/results/report/ --reportPageTitle index.html"
   },
