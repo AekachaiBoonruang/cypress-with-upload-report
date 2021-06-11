@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run  --browser chrome --headless",
-    "test:merge-report": "npx mochawesome-merge ./cypress/results/report/*.json > ./cypress/results/report/index.json",
-    "test:genereate-report": "npx marge ./cypress/results/report/index.json --reportDir ./cypress/results/report/ --reportPageTitle index.html"
+    "test:merge-report": "npx mochawesome-merge ./cypress/results/*.json > ./cypress/results/index.json",
+    "test:genereate-report": "npx marge ./cypress/results/index.json --reportDir ./cypress/results/ --reportPageTitle index.html"
   },
   "author": "",
   "license": "ISC",

@@ -22,7 +22,7 @@ Cypress.on('test:after:run', (test) => {
     {
       test,
     },
-    `../assets/videos/${Cypress.spec.name}.mp4`,
+    `videos/${Cypress.spec.name}.mp4`,
   );
 });
 // Alternatively you can use CommonJS syntax:

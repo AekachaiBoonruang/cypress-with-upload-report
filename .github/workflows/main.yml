@@ -33,7 +33,7 @@ jobs:
       - name: Copy test to public dir
         run: |
           mkdir public
-          cp -r cypress/results/report/* public
+          cp -r cypress/results/* public
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}

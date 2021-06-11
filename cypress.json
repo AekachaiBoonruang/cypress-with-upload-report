@@ -3,13 +3,13 @@
     "viewportWidth": 1920,
     "reporter": "mochawesome",
     "reporterOptions": {
-      "reportDir": "cypress/results/report",
+      "reportDir": "cypress/results/",
       "overwrite": false,
       "html": false,
       "json": true
     },
-    "screenshotsFolder": "cypress/results/assets/screenshots",
-    "videosFolder": "cypress/results/assets/videos",
+    "screenshotsFolder": "cypress/results/screenshots",
+    "videosFolder": "cypress/results/videos",
     "video": true,
     "waitForAnimations": true,
     "chromeWebSecurity": false
