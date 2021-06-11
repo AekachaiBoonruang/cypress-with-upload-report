@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "rm -rf cypres/results/* && cypress run",
+    "test:merge-report": "npx mochawesome-merge ./cypress/results/report/*.json > ./cypress/results/report/index.json",
+    "test:genereate-report": "npx marge ./cypress/results/report/index.json --reportDir ./cypress/results/report/ --reportPageTitle index.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^7.5.0"
+    "cypress": "^7.5.0",
+    "mocha": "^9.0.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0"
   }
 }
