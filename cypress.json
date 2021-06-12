@@ -6,7 +6,8 @@
       "reportDir": "cypress/results/",
       "charts": true,
       "reportPageTitle": "custom-title",
-      "embeddedScreenshots": true
+      "embeddedScreenshots": true,
+      "autoOpen": true
     },
     "screenshotsFolder": "cypress/results/screenshots",
     "videosFolder": "cypress/results/videos",

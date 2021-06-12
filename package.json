@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run  --browser chrome --headless",
-    "test:merge-report": "npx mochawesome-merge ./cypress/results/*.json > ./cypress/results/index.json",
-    "test:genereate-report": "npx marge ./cypress/results/index.json --reportDir ./cypress/results/ --reportPageTitle index.html"
+    "test": "cypress run  --browser chrome --headless"
   },
   "author": "",
   "license": "ISC",
