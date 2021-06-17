@@ -4,11 +4,5 @@
     "cypress/globals": true
   },
   "extends": ["standard", "plugin:cypress/recommended"],
-  "rules": {
-    "no-console": 1,
-    "no-unused-vars": 2,
-    "no-unused-expressions": 0,
-    "no-var": 2,
-    "cypress/no-unnecessary-waiting": "error"
-  }
+  "rules": {}
 }
