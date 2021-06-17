@@ -21,9 +21,9 @@ import 'cypress-mochawesome-reporter/register'
 Cypress.on('test:after:run', (test) => {
   addContext(
     {
-      test
+      test,
     },
-    `videos/${Cypress.spec.name}.mp4`
+    `videos/${Cypress.spec.name}.mp4`,
   )
 })
 // Alternatively you can use CommonJS syntax:

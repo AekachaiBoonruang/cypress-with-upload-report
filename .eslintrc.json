@@ -3,5 +3,5 @@
   "env": {
     "cypress/globals": true
   },
-  "extends": ["standard", "plugin:cypress/recommended"]
+  "extends": ["standard", "plugin:cypress/recommended", "prettier"]
 }
