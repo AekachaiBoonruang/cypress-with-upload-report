@@ -1,15 +1,14 @@
 {
-    "plugins": [
-      "cypress"
-    ],
-    "rules": {
-        "cypress/no-assigning-return-values": "error",
-        "cypress/no-unnecessary-waiting": "error",
-        "cypress/assertion-before-screenshot": "warn",
-        "cypress/no-async-tests": "error"
-      },
-    "env": {
-        "cypress/globals": true
-    }
-
+  "plugins": ["cypress"],
+  "env": {
+    "cypress/globals": true
+  },
+  "extends": ["standard", "plugin:cypress/recommended"],
+  "rules": {
+    "no-console": 1,
+    "no-unused-vars": 2,
+    "no-unused-expressions": 0,
+    "no-var": 2,
+    "cypress/no-unnecessary-waiting": "error"
   }
+}
