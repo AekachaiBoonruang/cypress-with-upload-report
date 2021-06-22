@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run  --browser chrome --headless",
+    "test:dev": "cypress run  --browser chrome --headless --env configFile=dev",
+    "test:staging": "cypress run --browser chrome --headless --env configFile=staging",
+    "test:open": "cypress open  --browser chrome --env configFile=dev",
     "lint": "eslint cypress --fix",
     "prettier": "prettier --write ./cypress/**/*.js"
   },
