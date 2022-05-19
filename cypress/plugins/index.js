@@ -26,6 +26,6 @@ function getConfigurationByFile(file) {
 
 module.exports = (on, config) => {
   require('cypress-mochawesome-reporter/plugin')(on)
-  const file = config.env.configFile || '../config/dev.json'
+  const file = config.env.configFile || 'dev'
   return getConfigurationByFile(file)
 }
